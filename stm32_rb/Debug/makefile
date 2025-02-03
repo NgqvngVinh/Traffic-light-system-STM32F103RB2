@@ -63,8 +63,8 @@ all: main-build
 main-build: STM32_RB_Traffic_light_sys.elf secondary-outputs
 
 # Tool invocations
-STM32_RB_Traffic_light_sys.elf STM32_RB_Traffic_light_sys.map: $(OBJS) $(USER_OBJS) D:\HCMUT\Year\ 3\HK241\Microcontroller-Microprocessor\BTL\stm32_rb\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "STM32_RB_Traffic_light_sys.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\HCMUT\Year 3\HK241\Microcontroller-Microprocessor\BTL\stm32_rb\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_RB_Traffic_light_sys.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+STM32_RB_Traffic_light_sys.elf STM32_RB_Traffic_light_sys.map: $(OBJS) $(USER_OBJS) D:\HCMUT\Year_3\HK241\Microcontroller-Microprocessor\BTL\git\ stm32_rb\stm32_rb\STM32F103RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "STM32_RB_Traffic_light_sys.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\HCMUT\Year_3\HK241\Microcontroller-Microprocessor\BTL\git stm32_rb\stm32_rb\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM32_RB_Traffic_light_sys.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

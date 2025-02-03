@@ -97,28 +97,13 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
-//	lcd_init();
-//	HAL_Delay(50);
-
-//	  // Hiển thị nội dung ban đầu lên LCD
-//	  lcd_goto_XY(1, 1);
-//	  lcd_send_string("STM32 I2C LCD");
-//	  lcd_goto_XY(2, 1);
-//	  lcd_send_string("Timer Interrupt");
-
-
   while (1)
   {
 	  fsm_manual_run();
-
-
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

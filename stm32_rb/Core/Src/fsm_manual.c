@@ -40,8 +40,6 @@ void fsm_manual_run(){
 
 			break;
 		case NORMAL_MODE:
-//				  update_2_led_7_seg_buffer_left(timer1_counter/100);
-//				  update_2_led_7_seg_buffer_right(timer2_counter/100);
 				  sprintf(buffer1, "%d ", timer1_counter/100);
 				  sprintf(buffer2, "%d ", timer2_counter/100);
 
@@ -54,12 +52,12 @@ void fsm_manual_run(){
 				  lcd_send_string(buffer1);
 
 
-				  lcd_goto_XY(2, 0);           // Dòng 2, cột 1 (bắt đầu từ 0)
-				  lcd_send_string("Lane 2:");   // Hiển thị nhãn Lane 2
+				  lcd_goto_XY(2, 0);
+				  lcd_send_string("Lane 2:");
 
 
-				  lcd_goto_XY(2, 8);           // Dòng 2, cột 8 (để hiển thị giá trị buffer2)
-				  lcd_send_string(buffer2);    // Hiển thị thời gian còn lại cho Lane 2
+				  lcd_goto_XY(2, 8);
+				  lcd_send_string(buffer2);
 
 
 
@@ -89,12 +87,6 @@ void fsm_manual_run(){
 
 			break;
 		case MAN_RED_MODE:
-//					update_2_led_7_seg_buffer_left(mode);
-//					update_2_led_7_seg_buffer_right(buffer_duration_time/100);
-
-
-
-
 					sprintf(buffer, "%d ", buffer_duration_time/100);
 
 
@@ -110,15 +102,11 @@ void fsm_manual_run(){
 
 					lcd_send_string(buffer);
 
-
-
-
 					if(timer6_flag == 1){
 						blinkind_led_traffic_x();
 						blinkind_led_traffic_y();
 						setTimer6(50);
 					}
-
 
 					if(is_button_pressed(0) == 1){
 						clearTimer6();
@@ -127,29 +115,19 @@ void fsm_manual_run(){
 						setTimer6(50);
 						buffer_duration_time = duration_time_of_AUTO_YELLOW;
 						mode = MAN_YELLOW_MODE;
-
-
-
-
-
-
 					}
+
 					if(is_button_pressed(1) == 1){
 						buffer_duration_time = (buffer_duration_time + 100) % 10000;
 
 					}
+
 					if(is_button_pressed(2) == 1){
 						duration_time_of_AUTO_RED = buffer_duration_time;
 					}
 
 			break;
 		case MAN_GREEN_MODE:
-//					update_2_led_7_seg_buffer_left(mode);
-//					update_2_led_7_seg_buffer_right(buffer_duration_time/100);
-
-
-
-
 			sprintf(buffer, "%d ", buffer_duration_time/100);
 
 
@@ -202,12 +180,6 @@ void fsm_manual_run(){
 
 			break;
 		case MAN_YELLOW_MODE:
-//			update_2_led_7_seg_buffer_left(mode);
-//			update_2_led_7_seg_buffer_right(buffer_duration_time/100);
-
-
-
-
 			sprintf(buffer, "%d ", buffer_duration_time/100);
 
 
@@ -222,9 +194,6 @@ void fsm_manual_run(){
 			lcd_goto_XY(2, 8);
 
 			lcd_send_string(buffer);
-
-
-
 
 
 			if(timer6_flag == 1){

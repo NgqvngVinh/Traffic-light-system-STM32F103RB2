@@ -12,14 +12,16 @@
 #include "led_7_seg.h"
 
 
-//timer0 -> led_7_seg
-//timer1 -> đèn ngang
-//timer2 -> đèn dọc
-//timer3->Mode_count(test button0) *chưa dùng
-//timer4-> lcd
-//timer5->button2   			*chưa dùng
-//timer6->blinky 4 led
 
+//**
+// timer0 -> led_7_seg              		*used
+// timer1 -> horizontal traffic lights    	*used
+// timer2 -> vertical traffic lights      	*used
+// timer3->  Mode_count (test button0)     	*unused
+// timer4->  lcd                          	*used
+// timer5->  button2                      	*unused
+// timer6->  blinky 4 led                 	*used
+//**
 
 
 
